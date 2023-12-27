@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar Shake</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: rgb(9,121,103);
+            background: linear-gradient(125deg, rgb(76, 9, 121) 33%, rgba(0,255,179,1) 78%);
+            /* background-color: black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+            background-size: 500% 500%;
+            animation: bg 3s linear infinite;
+        }
+        @keyframes bg {
+            0%{
+                background-position: 0%;
+            }
+            50%{
+                background-position: 100%;
+            }
+            100%{
+                background-position: 0%;
+            }
+            
+        }
+      
+        h2{
+            font-size: 60px;
+            font-weight: 600px;
+            color: #4b4a4a;
+            transition: .5s;
+            
+        }
+        h2:hover{
+            color: white;
+            cursor: pointer;
+            /* text-shadow: 0 0 5px #fff400; */
+            text-shadow: 0 0 25px #fff400;
+            text-shadow: 0 0 50px #fff400;
+            /* text-shadow: 0 0 100px #fff400; */
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            padding: 5px 10px;
+            border-style: none;
+            outline: none;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        input:invalid{
+            border: 2px solid red;
+            transition-property: all;
+            animation: shake .5s ease 5;
+        }
+        input:valid{
+            border: 2px solid green;
+        }
+        @keyframes shake {
+            0%{
+                transform: translateX(5px);
+            }
+            50%{
+                transform: translateX(-5px);
+            }
+            100%{
+                transform: translateX(5px);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h2>Search Bar</h2>
+    <input type="search" name="search" placeholder="Search here" pattern="[a-z]*">
+    
+</body>
+</html>
